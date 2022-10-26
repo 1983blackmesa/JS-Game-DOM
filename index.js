@@ -44,6 +44,16 @@ document.getElementById('MyAudioElement').play()
 function randomNumbers() {
   number=document.getElementById("demo").innerHTML = Math.floor(Math.random() * 20);
   number2=document.getElementById("demo3").innerHTML = Math.floor(Math.random() * 20);
+	
+	if(number === number2) {
+				document.getElementById('demo').remove();
+				document.getElementById('button1').remove();
+				document.getElementById('button2').remove();
+				document.getElementById('demo1').remove();
+				document.getElementById('which').remove();
+				document.querySelector("p").innerHTML = '<p style="color:blue">TIE!</p>' + number + " = " + number2; //change the html text
+				window.setTimeout(function(){location.reload()},7000);
+	}
   
   //get maximum number
   getMax = Math.max(number, number2);
