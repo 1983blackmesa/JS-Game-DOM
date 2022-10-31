@@ -14,50 +14,48 @@
 <body> 
 
 <div class="background"></div> <!-- LOAD BACKGROUND Image-->
+<div class="container"> 
+	<div class="message">
 
-<div class="container">
-	
-<div class="message">
+<p id="numberTitleLocation"><span style="color: red;">&uarr;</span> Which Number is Larger</p>
 
-<p id="which"><span style="color: red;">&uarr;</span> Which Number is Larger</p>
+<!--<button class="btn btn-primary" id="startbtn" onclick="startGame()">Get Random Numbers</button>-->
 
-<audio id="MyAudioElement" autoplay>
-  
-  <source src="sound/music.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
-<button class="btn btn-primary" id="button1" >Get 2 Numbers</button>
-     <br/>
-	 <div class="dice">
-	 <p id="demo"></p>
-	 </div>
-	 
-	 <div class="dice">
-	 <p id="demo3"></p>
-	 </div>
-
-	<!-- <p id="which">Which Number is Larger?</p> -->
-	<br/>
-     <input id="demo1" type="text" name="code" required/><br/><br/>
-
-    <button class="btn btn-primary" id="button2">Submit</button>	
-    <p></p>
-	
-	<!--
-	<button class="btn btn-primary" type="button" onclick="play_pause()">Play/Pause</button>
+<button class="btn btn-primary" type="button" onclick="play_pause()">Play/Pause</button>
 
 	<audio id="myAudio" preload loop>
       <source src="sound/music.mp3" type="audio/mpeg">
       Your browser does not support this audio format.
     </audio>
-	-->
+
+
+	 
+	 <div class="dice">
+	 <p id="random1"></p>
+	 </div>
+	 
+	 <div class="dice">
+	 <p id="random2"></p>
+	 </div>
+	 
+	  <div class="dice">
+	 <p id="random3"></p>
+	 </div>
+
+     <input id="getInput" type="text" name="code" />
+	 
+	 <div class="box">
+  <h2>Your Score</h2>
+  <p id="humanScore">0</p>
+  </div>
+	 
+	<button class="btn btn-primary" id="checkans" onclick="getUserInput()">Check Answer</button>
+    
+    
 	<script src="index.js"></script>
-	
-	
+		
 	</div> <!-- MESSAGE -->
-	
-	</div> <!-- CONTAINER -->
+	</div>  <!-- CONTAINER -->
 	</body>
 	
 	</html>
