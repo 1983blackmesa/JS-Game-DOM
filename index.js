@@ -4,7 +4,8 @@ var number2;
 var number3;
 var getMax;
 var getMin;
-
+let sound_point = new Audio('sound/point.mp3'); //score sound point
+let sound_die = new Audio('sound/die.mp3');
 
 var scoreHuman = document.getElementById("humanScore"); //get score from html id value
 //getRandomNumbers();
@@ -52,12 +53,16 @@ function getRandomNumbers() {
 		//console.log(secondInput);
 			if(getMax === +secondInput) {
 				scoreResultsWIN();
+				sound_point.play();
 			//document.querySelector("p").remove();				
 				//document.querySelector("p").innerHTML = "";
 			}
 				
 			
-			else if(getMin === +secondInput) { scoreResultsLOOSE(); }
+			else if(getMin === +secondInput) { 
+			scoreResultsLOOSE(); 
+			sound_die.play();
+			}
 
 
 
