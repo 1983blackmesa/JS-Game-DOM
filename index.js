@@ -1,11 +1,15 @@
 //global variables
-var number;
-var number2;
-var number3;
-var getMax;
-var getMin;
+let number;
+let number2;
+let number3;
+let getMax;
+let getMin;
 let sound_point = new Audio('sound/point.mp3'); //score sound point
 let sound_die = new Audio('sound/die.mp3');
+let gamesPlayed = 0;
+let roundsWon = 0; //Correct:
+let roundsLost = 0; //InCorrect:
+//let totalAmountWon = 0;
 
 var scoreHuman = document.getElementById("humanScore"); //get score from html id value
 //getRandomNumbers();
@@ -26,7 +30,7 @@ function getRandomNumbers() {
   number=document.getElementById("random1").innerHTML = Math.floor(Math.random() * 20);
   number2=document.getElementById("random2").innerHTML = Math.floor(Math.random() * 20);
   number3=document.getElementById("random3").innerHTML = Math.floor(Math.random() * 20);
-	if(number === 0 || number2 === 0 || number3 === 0) {
+	if(number === 0 || number2 === 0 || number3 === 0) { //the number 0 issue
 		getRandomNumbers();
 	}
   getMax = Math.max(number, number2, number3);
@@ -54,6 +58,12 @@ function getRandomNumbers() {
 			if(getMax === +secondInput) {
 				scoreResultsWIN();
 				sound_point.play();
+				gamesPlayed++;
+				roundsWon++;
+				//Renders the stats
+    document.getElementById("gamesplayed").textContent = gamesPlayed;
+	document.getElementById("roundswon").textContent = roundsWon;
+	//document.getElementById("totalamountwon").textContent = totalAmountWon.toFixed(2)
 			//document.querySelector("p").remove();				
 				//document.querySelector("p").innerHTML = "";
 			}
@@ -62,6 +72,10 @@ function getRandomNumbers() {
 			else if(getMin === +secondInput) { 
 			scoreResultsLOOSE(); 
 			sound_die.play();
+			gamesPlayed++;
+			roundsLost--;
+			document.getElementById("gamesplayed").textContent = gamesPlayed; //added here
+			document.getElementById("roundslost").textContent = roundsLost;
 			}
 
 
